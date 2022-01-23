@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D&D Toolbox</title>
+</head>
+<header>
+	<img src="DD-Logo.png">
+</header>
+<body style="text-align: center;">
+	<h1>Welcome to the D&D Toolbox!</h1>
+	<p>Press f12 to begin!</p>
+	<p>Type in any of the commands below!</p>
+	<p>d(num): roll dice with num sides.</p>
+	<p>dm(num, mod): roll dice with num sides and add mod to it.</p>
+	<p>setHealth(num): sets health to num.</p>
+	<p>getHealth(): prints health.</p>
+	<p>damage(num): take damage by num.</p>
+	<p>heal(num): heal by num.</p>
+	<p>character(): open character sheet.</p>
+	<p>BTW, your card is in Attack On Titan Vol. 34</p>
+</body>
+<script>
+console.log("**********D&D Toolbox**********");
+console.log("Enter commands below");
+function d(num){
+        console.log(Math.floor((Math.random() * num) + 1));
+}
+
+function dm(num, mod){
+	console.log(Math.floor((Math.random() * num) + 1) + mod);
+}
+
+function character(){
+	window.open("/Users/gortbrown/dnd/character.pdf");
+}
+var health = 0;
+	function setHealth(num){
+		health = num;
+		getHealth();
+	}
+
+	function getHealth(){
+		console.log("Your health is " + health);
+	}
+
+function damage(num){
+	health -= num;
+	getHealth();
+}
+
+function heal(num){
+	health += num;
+	getHealth();
+}
+</script>
+<style>
+	body{
+		background-color: tan;
+	}
+	header{
+		border-style: dotted;
+	}
+	img{
+		width:200px;
+	}
+</style>
+
+</html>	
